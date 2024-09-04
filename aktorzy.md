@@ -50,13 +50,9 @@ class Maszyna extends Actor { ... }  // Odpowiedzialna za zrobienie kawy
     case class ZarejestrujOplate(kwota: Int)
     ```
 
-    **Kasa** powinna sumować otrzymane kwoty i przechowywać je w tożsamości. Po dodaniu otrzymanej kwoty do sumy, **Kasa** powinna odesłać do **Managera** potwierdzenie płatności za pomocą komunikatu:
+    **Kasa** powinna sumować otrzymane kwoty i przechowywać je w tożsamości. ~~Po dodaniu otrzymanej kwoty do sumy, **Kasa** powinna odesłać do **Managera** potwierdzenie płatności za pomocą komunikatu:~~
 
-    ```scala
-    case object PotwierdzeniePlatnosci
-    ```
-
-4. **Manager** po otrzymaniu potwierdzenia płatności, przekazuje zamówienie do pierwszego dostępnego (nie "zajętego") **Baristy** za pomocą komunikatu:
+4. ~~**Manager** po otrzymaniu potwierdzenia płatności,~~ Następnie **Manager** od razu przekazuje zamówienie do pierwszego dostępnego (nie "zajętego") **Baristy** za pomocą komunikatu
 
     ```scala
     case object PrzygotujKawe
@@ -106,7 +102,6 @@ case class InitKasa(/* TODO: wymyśl listę parametrów */)
 case class InitMaszyna(/* TODO: wymyśl listę parametrów */)
 case class Zamowienie(kwota: Int)
 case class ZarejestrujOplate(kwota: Int)
-case object PotwierdzeniePlatnosci
 case object PrzygotujKawe
 case object ZrobKawe
 case object BrakZdolnosci
