@@ -1,1 +1,0 @@
-# scala-ultra-powtorka
